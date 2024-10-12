@@ -19,13 +19,13 @@ def binary_search(array: list, target: float):
               f"right: {right},\t "
               f"mid: {mid},\t "
               f"target: {target},\t "
-              f"arr_mid: {array[mid]},\t"
+              f"arr_mid: {array[mid]},\n"
               f"arr: {array[left:right]}")
 
 
         if array[mid] == target:
             count += 1    
-            return (count, array[mid])  # Якщо знайдено шуканий елемент, повертаємо його індекс
+            return (count, array[mid])  # Якщо знайдено шуканий елемент, повертаємо його каутн ітерацій та елемент
         elif array[mid] < target:
             left = mid + 1  # Якщо шуканий елемент більший, зміщуємо ліву межу
         else:
@@ -33,7 +33,7 @@ def binary_search(array: list, target: float):
         
         count += 1
 
-    return (count, array[left])  # Повертаємо -1, якщо елемент не знайдено
+    return (count, array[left])  # Повертаємо верхню межу, якщо елемент не знайдено
 
 # Приклад використання
 array = [2.2, 5.5, 8.555, 12.12, 16.111, 23.111, 38.12, 56.15, 72.16, 91.16]
